@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
+import Footer from '@modules/Footer';
+import Header from '@modules/Header';
 
 type BaseLayoutProps = {
   readonly title: string
@@ -13,13 +15,14 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ title, children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="container mx-auto px-4 min-h-screen">
-        {children}
+      <div className={'min-h-screen'}>
+        <Header />
+        <main className="mx-auto px-2 container max-w-screen-lg">
+          {children}
+        </main>
       </div>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-          footer
-      </footer>
+      <Footer />
     </>
   );
 };
