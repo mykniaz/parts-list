@@ -19,6 +19,6 @@ export const getElectricPoint = (pointType?: ElectricPointType, description?: st
   };
 };
 
-export const getElectricPointTitle = (pointType: ElectricPointType) => {
+export const getElectricPointTitle = (pointType: ElectricPointType): string => {
   return variantTitles[pointType || ElectricPointType.SOCKET];
 };
