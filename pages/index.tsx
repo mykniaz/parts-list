@@ -1,11 +1,13 @@
-import Head from 'next/head'
-import BaseLayout from '/components/layouts/BaseLayout';
-import HomePage from '/components/templates/HomePage';
+import { NextPage } from 'next';
+import BaseLayout from '@layouts/BaseLayout';
+import Home from '@templates/Home';
 
-export default function Home() {
+const HomePage: NextPage = () => {
   return (
-      <BaseLayout title={'Home Page'}>
-        <HomePage />
-      </BaseLayout>
-  )
-}
+    <BaseLayout title={'Home Page'}>
+      <Home/>
+    </BaseLayout>
+  );
+};
+
+export default HomePage;

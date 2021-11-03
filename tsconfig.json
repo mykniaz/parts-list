@@ -13,7 +13,19 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./components/*"],          // Base directory for React/Next components.
+      "@layouts/*": ["./components/layouts/*"],     // Directory for Page Layouts.
+      "@elements/*": ["./components/elements/*"],   // Directory for UI components.
+      "@modules/*": ["./components/modules/*"],     // Directory for Global usage components.
+      "@templates/*": ["./components/templates/*"], // Directory for components that used as entry points of Next pages.
+      "@hooks/*": ["./lib/hooks/*"],                // Directory for react hooks.
+      "@services/*": ["./lib/services/*"],          // Directory for services, that used to connect api.
+      "@public/*": ["./public/*"],                  // Directory for icons, images, or json files.
+      "@utils/*": ["./lib/utils/*"],                // Directory for helpers, sorters, formatters.
+      "@globalTypes/*": ["./lib/types/*"],          // Directory for types, interfaces, enums and other.
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

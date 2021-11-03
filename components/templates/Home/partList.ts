@@ -1,5 +1,3 @@
-import { title } from "process"
-
 enum PartVariant {
   SOCKET = 'SOCKET',
   SWITCH_BASE = 'SWITCH_BASE',
@@ -9,39 +7,37 @@ enum PartVariant {
   WARM_FLOOR_REGULATOR = 'WARM_FLOOR_REGULATOR'
 }
 
-const variantTitles: {[key in PartVariant]: string} = {
+const variantTitles: { readonly[key in PartVariant]: string} = {
   [PartVariant.SOCKET]: 'Р.',
   [PartVariant.SWITCH_BASE]: 'В.',
   [PartVariant.SWITCH_CROSS]: 'В.Пер.',
   [PartVariant.SWITCH_DOUBLE]: 'В.Дв.',
   [PartVariant.SWITCH_PASS_THROUGH]: 'В.Пр.',
   [PartVariant.WARM_FLOOR_REGULATOR]: 'Т.П.'
-}
+};
 
 const getPart = (variant?: PartVariant, description?: string): Part => {
   return {
     variant: variant || PartVariant.SOCKET,
     title: variantTitles[variant || PartVariant.SOCKET],
     description: !variant ? 'Розетка одинарная' : description,
-  }
-}
+  };
+};
 
 type Part = {
-  variant: PartVariant,
-  title: string
-  description?: string
+  readonly variant: PartVariant,
+  readonly title: string
+  readonly description?: string
 }
 
-type Group = Array<Part>
+type Group = ReadonlyArray<Part>
 
 type Room = {
-  name: string
-  groups: Array<Group>
+  readonly name: string
+  readonly groups: ReadonlyArray<Group>
 }
 
-type ApartmentPartList = Array<Room>
-
-export const apartmentPartList:Array<Room> = [
+export const apartmentPartList:ReadonlyArray<Room> = [
   {
     name: 'Big Room',
     groups: [
@@ -52,4 +48,4 @@ export const apartmentPartList:Array<Room> = [
       ]
     ]
   }
-]
+];

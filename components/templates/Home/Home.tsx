@@ -1,6 +1,7 @@
-import {apartmentPartList} from './partList';
+import React from 'react';
+import { apartmentPartList } from './partList';
 
-const HomePage: React.FC<{}> = () => {
+const Home: React.FC = () => {
   return (
     <div>
       {
@@ -18,19 +19,18 @@ const HomePage: React.FC<{}> = () => {
                           <div className='px-4 py-2 border' key={partIndex} title={part.description}>
                             {partIndex} {part.title}
                           </div>
-                        )
+                        );
                       })}
                     </div>
-                  )
+                  );
                 })}
               </div>
             </div>
-          )
+          );
         })
       }
-
     </div>
-  )
-}
+  );
+};
 
-export default HomePage;
+export default Home;
