@@ -15,8 +15,7 @@ export enum ElectricPointType {
 }
 
 export type ElectricPoint = Entity & {
-  readonly type: ElectricPointType,
-  readonly description?: string
+  readonly type: ElectricPointType
 }
 
 export type ElectricPointGroupList = Entity & {
